@@ -1,0 +1,16 @@
+// basic colors
+$white: white;
+$black: black;
+
+// dimensions
+$header-height: 75px;
+$sidebar-width: 200px;
+$sidebar-width-collapsed: 20px;
+
+// transitions
+$sidebar-collapse-transition-time: 1s;
+
+// box shadow
+$sidebar-box-shadow: 1px 0px 8px $black;
+$sidebar-collapse-button-box-shadow: 1px 0px 4px $black;
+$header-box-shadow: 0px 1px 8px $black;

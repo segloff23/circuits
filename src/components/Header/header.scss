@@ -1,0 +1,81 @@
+@import 'constants/variables.scss';
+
+.header-container {
+  position: fixed;
+  top: 0;
+  left: $sidebar-width;
+  z-index: 1000;
+  transition: left $sidebar-collapse-transition-time,
+    width $sidebar-collapse-transition-time;
+  box-shadow: $header-box-shadow;
+  background-color: var(--color-tone-2);
+  width: calc(100% - #{$sidebar-width});
+  height: $header-height;
+  color: $white;
+  font-weight: bold;
+  &.sidebar-collapsed {
+    left: $sidebar-width-collapsed;
+    width: calc(100% - #{$sidebar-width-collapsed});
+  }
+  .contents {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    .left {
+      padding-left: 50px;
+    }
+    .right {
+      padding-right: 50px;
+      .settings-container {
+        $gear-height: 25px;
+        position: relative;
+        height: $gear-height;
+        .bi {
+          position: relative;
+          z-index: 1010;
+          cursor: pointer;
+          font-size: $gear-height;
+          line-height: $gear-height;
+        }
+        .settings {
+          position: absolute;
+          top: calc(#{$gear-height} / 2);
+          right: calc(#{$gear-height} / 2);
+          z-index: 1009;
+          box-shadow: 0px 1px 4px $black;
+          border-radius: 4px;
+          background-color: var(--color-tone-0);
+          width: 300px;
+          height: 500px;
+          .contents {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 1rem 1rem;
+            .theme-selection-form {
+              padding: 0.2rem 0.2rem;
+            }
+            .custom-theme-form {
+              display: flex;
+              flex-direction: column;
+              padding: 0.2rem 0.2rem;
+            }
+            .form-group {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0.2rem 0.2rem;
+              .label {
+                padding-right: 1rem;
+                font-weight: normal;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
